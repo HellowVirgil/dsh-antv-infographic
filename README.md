@@ -15,6 +15,16 @@
   <a href="./LICENSE"><img alt="MIT License" src="https://img.shields.io/npm/l/dsh-antv-infographic"></a>
 </p>
 
+## Preview
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/HellowVirgil/dsh-antv-infographic/main/docs/images/infographic-preview.jpg" alt="dsh-antv-infographic rendering an editable AntV Infographic inside DSH" width="100%">
+</p>
+
+<p align="center">
+  <sub>Actual DSH rendering with progressive generation, local editing, SVG/PNG export, and DSL copying.</sub>
+</p>
+
 The model emits an `infographic` fenced block, and the plugin progressively renders the AntV Infographic DSL as SVG:
 
 ````markdown
@@ -39,7 +49,7 @@ data
 - Uses the DSH `fence-registry` when available, with a DOM fallback for older hosts
 - Lazy-loads the AntV engine without blocking the initial DSH page load
 - Limits model-generated source size and blocks executable markup, dangerous URLs, and private-network resources
-- Includes an `antv-infographic` Skill that guides template selection and DSL generation
+- Includes an optional `antv-infographic` Skill with richer template-selection and DSL-generation guidance
 
 ## Installation
 
@@ -48,6 +58,8 @@ Install the published package directly into a DSH profile:
 ```bash
 dsh plugin --profile web add dsh-antv-infographic
 ```
+
+This command installs everything required for DSH to generate and render `infographic` blocks. A separate Skill installation is not required.
 
 Restart `dsh web` and hard-refresh the browser after installation.
 
@@ -68,11 +80,23 @@ dsh plugin --profile web remove dsh-antv-infographic
 dsh plugin --profile web add "link:$PWD"
 ```
 
-### Install the Skill
+### Optional: Install the Skill
+
+The plugin already injects the essential DSL contract into the DSH system prompt. Install the Skill only if your agent environment discovers `~/.agents/skills` and you want more detailed template guidance and examples for complex infographics.
+
+From a source checkout:
 
 ```bash
 mkdir -p ~/.agents/skills/antv-infographic
 cp SKILL.md ~/.agents/skills/antv-infographic/SKILL.md
+```
+
+Or download the packaged Skill directly from GitHub:
+
+```bash
+mkdir -p ~/.agents/skills/antv-infographic
+curl -fsSL https://raw.githubusercontent.com/HellowVirgil/dsh-antv-infographic/main/SKILL.md \
+  -o ~/.agents/skills/antv-infographic/SKILL.md
 ```
 
 Try this prompt in a new session:

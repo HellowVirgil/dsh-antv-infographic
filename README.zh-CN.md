@@ -15,6 +15,16 @@
   <a href="./LICENSE"><img alt="MIT License" src="https://img.shields.io/npm/l/dsh-antv-infographic"></a>
 </p>
 
+## 效果预览
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/HellowVirgil/dsh-antv-infographic/main/docs/images/infographic-preview.jpg" alt="dsh-antv-infographic 在 DSH 中渲染可编辑的 AntV Infographic" width="100%">
+</p>
+
+<p align="center">
+  <sub>DSH 真实运行效果：支持流式生成、本地编辑、SVG/PNG 导出和 DSL 复制。</sub>
+</p>
+
 模型输出 `infographic` fenced block，插件将其中的 AntV Infographic DSL 流式渲染为 SVG：
 
 ````markdown
@@ -39,7 +49,7 @@ data
 - 新版 DSH 走 `fence-registry`，旧版自动使用 DOM fallback
 - AntV 引擎按需加载，不阻塞 DSH 首屏
 - 对模型生成内容限制大小，并拦截可执行标记、危险 URL 和私网资源
-- 附带 `antv-infographic` Skill，指导模型选择模板和生成 DSL
+- 附带可选的 `antv-infographic` Skill，提供更完整的模板选择和 DSL 生成指导
 
 ## 安装
 
@@ -48,6 +58,8 @@ data
 ```bash
 dsh plugin --profile web add dsh-antv-infographic
 ```
+
+该命令已经包含 DSH 生成和渲染 `infographic` block 所需的全部能力，不需要额外安装 Skill。
 
 安装完成后重启 `dsh web`，并在浏览器中执行硬刷新。
 
@@ -68,11 +80,23 @@ dsh plugin --profile web remove dsh-antv-infographic
 dsh plugin --profile web add "link:$PWD"
 ```
 
-### 安装 Skill
+### 可选：安装 Skill
+
+插件已经会向 DSH system prompt 注入必要的 DSL 约定。只有当 Agent 环境会读取 `~/.agents/skills`，并且希望复杂信息图获得更完整的模板指导和示例时，才需要安装 Skill。
+
+从源码目录安装：
 
 ```bash
 mkdir -p ~/.agents/skills/antv-infographic
 cp SKILL.md ~/.agents/skills/antv-infographic/SKILL.md
+```
+
+也可以直接从 GitHub 下载随包维护的 Skill：
+
+```bash
+mkdir -p ~/.agents/skills/antv-infographic
+curl -fsSL https://raw.githubusercontent.com/HellowVirgil/dsh-antv-infographic/main/SKILL.md \
+  -o ~/.agents/skills/antv-infographic/SKILL.md
 ```
 
 在新会话中输入：
