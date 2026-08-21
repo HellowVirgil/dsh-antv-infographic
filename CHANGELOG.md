@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.1
+
+- Use the unscoped `dsh-antv-infographic` package and plugin identity.
+- Improve the bilingual README navigation, badges, and installation guidance.
+- Make CI installs reproducible and update GitHub Actions runtimes.
+- Add the GitHub Release → npm Trusted Publishing (OIDC) workflow.
+
 ## 0.1.0
 
 - Initial DSH plugin implementation.

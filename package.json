@@ -1,6 +1,6 @@
 {
   "name": "dsh-antv-infographic",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "AntV Infographic renderer for DeepSeek Harness: render AI-generated infographic fences inline with streaming, editing, and SVG/PNG export.",
   "author": "HellowVirgil",
   "repository": {
