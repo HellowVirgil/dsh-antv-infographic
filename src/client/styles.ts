@@ -1,4 +1,4 @@
-const STYLE_ID = '@omdsh-dev/dsh-antv-infographic'
+const STYLE_ID = 'dsh-antv-infographic'
 
 const CSS = `
 .dsh-antv-infographic{--dai-bg:color-mix(in srgb,currentColor 4%,transparent);--dai-border:color-mix(in srgb,currentColor 16%,transparent);--dai-muted:color-mix(in srgb,currentColor 62%,transparent);position:relative;margin:10px 0 14px;border:1px solid var(--dai-border);border-radius:12px;background:var(--dai-bg);overflow:hidden;color:inherit}

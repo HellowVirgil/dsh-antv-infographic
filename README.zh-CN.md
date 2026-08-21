@@ -41,7 +41,7 @@ dsh plugin --profile web add link:$PWD
 如果该 profile 已安装旧版本，先移除再添加：
 
 ```bash
-dsh plugin --profile web remove @omdsh-dev/dsh-antv-infographic
+dsh plugin --profile web remove dsh-antv-infographic
 dsh plugin --profile web add link:$PWD
 ```
 
@@ -80,7 +80,7 @@ DSH 有 fence 注册表时直接注册渲染器；没有时，插件观察对话
 
 适合：路线图、时间线、流程、能力地图、层级关系、方案对比、数据叙事、汇报摘要。
 
-不适合：表单、操作按钮、测验、复杂业务面板和需要回传模型的交互。这些场景继续使用 `dsh-genui`；两者可以同时安装。
+不适合：表单、操作按钮、测验、复杂业务面板，以及需要将用户交互结果回传模型的场景。
 
 ## 开发
 

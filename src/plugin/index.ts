@@ -34,7 +34,7 @@ Rules:
 - Themes may be \`default\`, \`dark\`, \`hand-drawn\`, or \`antv\`. The browser plugin supplies editing and SVG/PNG export controls.
 - Never place secrets, executable HTML/SVG, javascript URLs, file URLs, localhost/private-network URLs, or untrusted raw markup in the DSL.`
 
-const ASSET_ROUTE_PATH = '/plugins/@omdsh-dev/dsh-antv-infographic/assets'
+const ASSET_ROUTE_PATH = '/plugins/dsh-antv-infographic/assets'
 
 async function serveInfographicAsset(req: IncomingMessage, res: ServerResponse): Promise<void> {
   if (req.method !== 'GET' && req.method !== 'HEAD') {

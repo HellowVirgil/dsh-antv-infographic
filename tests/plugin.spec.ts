@@ -30,7 +30,7 @@ describe('host plugin', () => {
     expect(routes).toEqual([
       expect.objectContaining({
         kind: 'prefix',
-        path: '/plugins/@omdsh-dev/dsh-antv-infographic/assets',
+        path: '/plugins/dsh-antv-infographic/assets',
       }),
     ])
   })

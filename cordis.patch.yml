@@ -1,4 +1,4 @@
 # Insert the host half and browser client into the selected DSH profile.
 - insert:
     - id: antv-infographic
-      name: '@omdsh-dev/dsh-antv-infographic'
+      name: dsh-antv-infographic

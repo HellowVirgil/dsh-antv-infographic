@@ -6,7 +6,7 @@
  */
 import type { UserConfig } from 'tsdown'
 
-const ID = '@omdsh-dev/dsh-antv-infographic'
+const ID = 'dsh-antv-infographic'
 
 const EXTERNALS = [
   'react',

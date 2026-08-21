@@ -1,4 +1,4 @@
-const PLUGIN_ID = '@omdsh-dev/dsh-antv-infographic'
+const PLUGIN_ID = 'dsh-antv-infographic'
 const ASSET_DIR = `/plugins/${PLUGIN_ID}/assets`
 
 interface BootGraphLike {
