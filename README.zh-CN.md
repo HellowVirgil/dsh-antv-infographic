@@ -1,6 +1,19 @@
-# dsh-antv-infographic
+<p align="center">
+  🌐 简体中文 | <a href="./README.md">English</a>
+</p>
 
-在 DeepSeek Harness（DSH）的模型回复中直接渲染可编辑、可导出的 AntV 信息图。
+<h1 align="center">dsh-antv-infographic</h1>
+
+<p align="center">
+  在 DeepSeek Harness（DSH）的模型回复中直接渲染可编辑、可导出的 <a href="https://github.com/antvis/Infographic">AntV Infographic</a> SVG。
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/dsh-antv-infographic"><img alt="npm version" src="https://img.shields.io/npm/v/dsh-antv-infographic?logo=npm&color=cb3837"></a>
+  <a href="https://github.com/HellowVirgil/dsh-antv-infographic/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/HellowVirgil/dsh-antv-infographic/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://www.npmjs.com/package/dsh-antv-infographic"><img alt="npm downloads" src="https://img.shields.io/npm/dm/dsh-antv-infographic?logo=npm"></a>
+  <a href="./LICENSE"><img alt="MIT License" src="https://img.shields.io/npm/l/dsh-antv-infographic"></a>
+</p>
 
 模型输出 `infographic` fenced block，插件将其中的 AntV Infographic DSL 流式渲染为 SVG：
 
@@ -28,31 +41,41 @@ data
 - 对模型生成内容限制大小，并拦截可执行标记、危险 URL 和私网资源
 - 附带 `antv-infographic` Skill，指导模型选择模板和生成 DSL
 
-## 本地安装
+## 安装
+
+直接将已发布的包安装到 DSH profile：
+
+```bash
+dsh plugin --profile web add dsh-antv-infographic
+```
+
+安装完成后重启 `dsh web`，并在浏览器中执行硬刷新。
+
+### 从源码安装
 
 ```bash
 git clone https://github.com/HellowVirgil/dsh-antv-infographic.git
 cd dsh-antv-infographic
 pnpm install
 pnpm run check
-dsh plugin --profile web add link:$PWD
+dsh plugin --profile web add "link:$PWD"
 ```
 
 如果该 profile 已安装旧版本，先移除再添加：
 
 ```bash
 dsh plugin --profile web remove dsh-antv-infographic
-dsh plugin --profile web add link:$PWD
+dsh plugin --profile web add "link:$PWD"
 ```
 
-同步 Skill：
+### 安装 Skill
 
 ```bash
 mkdir -p ~/.agents/skills/antv-infographic
 cp SKILL.md ~/.agents/skills/antv-infographic/SKILL.md
 ```
 
-随后重启 `dsh web`，浏览器执行硬刷新，并在新会话中输入：
+在新会话中输入：
 
 ```text
 用 infographic 画一张 AI 产品从调研到规模化上线的路线图

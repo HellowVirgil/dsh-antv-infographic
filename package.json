@@ -11,6 +11,10 @@
   "bugs": {
     "url": "https://github.com/HellowVirgil/dsh-antv-infographic/issues"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/types/plugin/index.d.ts",

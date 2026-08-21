@@ -1,6 +1,19 @@
-# dsh-antv-infographic
+<p align="center">
+  🌐 <a href="./README.zh-CN.md">简体中文</a> | English
+</p>
 
-Render editable and exportable [AntV Infographic](https://github.com/antvis/Infographic) SVGs directly inside DeepSeek Harness (DSH) replies.
+<h1 align="center">dsh-antv-infographic</h1>
+
+<p align="center">
+  Render editable and exportable <a href="https://github.com/antvis/Infographic">AntV Infographic</a> SVGs directly inside DeepSeek Harness (DSH) replies.
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/dsh-antv-infographic"><img alt="npm version" src="https://img.shields.io/npm/v/dsh-antv-infographic?logo=npm&color=cb3837"></a>
+  <a href="https://github.com/HellowVirgil/dsh-antv-infographic/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/HellowVirgil/dsh-antv-infographic/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://www.npmjs.com/package/dsh-antv-infographic"><img alt="npm downloads" src="https://img.shields.io/npm/dm/dsh-antv-infographic?logo=npm"></a>
+  <a href="./LICENSE"><img alt="MIT License" src="https://img.shields.io/npm/l/dsh-antv-infographic"></a>
+</p>
 
 The model emits an `infographic` fenced block, and the plugin progressively renders the AntV Infographic DSL as SVG:
 
@@ -28,31 +41,41 @@ data
 - Limits model-generated source size and blocks executable markup, dangerous URLs, and private-network resources
 - Includes an `antv-infographic` Skill that guides template selection and DSL generation
 
-## Local installation
+## Installation
+
+Install the published package directly into a DSH profile:
+
+```bash
+dsh plugin --profile web add dsh-antv-infographic
+```
+
+Restart `dsh web` and hard-refresh the browser after installation.
+
+### Install from source
 
 ```bash
 git clone https://github.com/HellowVirgil/dsh-antv-infographic.git
 cd dsh-antv-infographic
 pnpm install
 pnpm run check
-dsh plugin --profile web add link:$PWD
+dsh plugin --profile web add "link:$PWD"
 ```
 
 If the profile already contains an older version, remove it before adding the local link again:
 
 ```bash
 dsh plugin --profile web remove dsh-antv-infographic
-dsh plugin --profile web add link:$PWD
+dsh plugin --profile web add "link:$PWD"
 ```
 
-Install the Skill:
+### Install the Skill
 
 ```bash
 mkdir -p ~/.agents/skills/antv-infographic
 cp SKILL.md ~/.agents/skills/antv-infographic/SKILL.md
 ```
 
-Restart `dsh web`, hard-refresh the browser, and try this prompt in a new session:
+Try this prompt in a new session:
 
 ```text
 Use infographic to create a roadmap from product research to scaled launch.
